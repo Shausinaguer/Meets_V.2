@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/acesso_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- tools:context=".AcessoActivity" -->
+
+    <View
+        android:id="@+id/topoVermelho"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@color/vinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/varela_round"
+        android:text="@string/app_name"
+        android:textColor="@color/branco"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintEnd_toEndOf="@+id/topoVermelho"
+        app:layout_constraintStart_toStartOf="@+id/topoVermelho"
+        app:layout_constraintTop_toTopOf="@+id/topoVermelho"/>
+
+    <ImageButton
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@null"
+        android:src="@drawable/seta_voltar"
+        app:layout_constraintBottom_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintStart_toStartOf="@+id/topoVermelho"
+        app:layout_constraintTop_toTopOf="@+id/topoVermelho"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/varela_round"
+        android:text="@string/acesse_perfil"
+        android:textColor="@color/vinho"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topoVermelho"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tituloEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textColor="@color/preto"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:ems="15"
+        android:inputType="textEmailAddress"
+        android:hint="exemplo@email.com"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloEmail"
+        app:layout_constraintBottom_toTopOf="@+id/tituloSenha"/>
+
+    <TextView
+        android:id="@+id/tituloSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/senha"
+        android:textColor="@color/preto"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
+        app:layout_constraintBottom_toTopOf="@+id/editSenha"/>
+
+    <EditText
+        android:id="@+id/editSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:ems="15"
+        android:inputType="textPassword"
+        android:hint="********"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloSenha"
+        app:layout_constraintBottom_toBottomOf="@+id/entrar" />
+
+    <Button
+        android:id="@+id/entrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="70dp"
+        android:paddingVertical="10dp"
+        android:backgroundTint="@color/vinho"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/entrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editSenha"
+        app:layout_constraintBottom_toTopOf="@+id/recuperarSenha" />
+
+    <TextView
+        android:id="@+id/recuperarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recuperar_senha"
+        android:textSize="30sp"
+        android:textColor="@color/vinho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entrar"
+        app:layout_constraintBottom_toTopOf="@+id/cadastrar"
+        />
+
+    <TextView
+        android:id="@+id/cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:text="@string/cadastre_se"
+        android:textSize="30sp"
+        android:textColor="@color/vinho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recuperarSenha"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comentario_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- tools:context=".AcessoActivity" -->
+
+    <View
+        android:id="@+id/topoVermelho"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@color/vinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/varela_round"
+        android:text="@string/app_name"
+        android:textColor="@color/branco"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintEnd_toEndOf="@+id/topoVermelho"
+        app:layout_constraintStart_toStartOf="@+id/topoVermelho"
+        app:layout_constraintTop_toTopOf="@+id/topoVermelho"/>
+
+    <ImageButton
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@null"
+        android:src="@drawable/seta_voltar"
+        app:layout_constraintBottom_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintStart_toStartOf="@+id/topoVermelho"
+        app:layout_constraintTop_toTopOf="@+id/topoVermelho"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/tituloComentario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/varela_round"
+        android:text="@string/comentario"
+        android:textColor="@color/vinho"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topoVermelho"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editcomentario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:ems="17"
+        android:inputType="textMultiLine"
+        android:gravity="top|start"
+        android:minLines="15"
+        android:maxLines="15"
+        android:scrollbars="vertical"
+        android:hint="Aqui seu comentario"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloComentario"
+        app:layout_constraintBottom_toTopOf="@+id/postar"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/postar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:paddingHorizontal="70dp"
+        android:paddingVertical="10dp"
+        android:backgroundTint="@color/vinho"
+        android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/postar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editcomentario"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

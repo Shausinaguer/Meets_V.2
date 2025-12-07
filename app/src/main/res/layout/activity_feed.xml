@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feed_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedActivity">
+
+    <View
+        android:id="@+id/topoVermelho"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@color/vinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/varela_round"
+        android:text="@string/app_name"
+        android:textColor="@color/branco"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintEnd_toEndOf="@+id/topoVermelho"
+        app:layout_constraintStart_toStartOf="@+id/topoVermelho"
+        app:layout_constraintTop_toTopOf="@+id/topoVermelho"/>
+
+    <ImageButton
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:src="@drawable/seta_voltar"
+        app:layout_constraintBottom_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintStart_toStartOf="@+id/topoVermelho"
+        app:layout_constraintTop_toTopOf="@+id/topoVermelho" />
+
+<!--    Aqui é o RecyclerView com o conteúdo salvo  -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/topoVermelho"
+        app:layout_constraintBottom_toTopOf="@+id/menuVermelho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/post_item" />
+
+    <View
+        android:id="@+id/menuVermelho"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/vinho"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:src="@drawable/home_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menuVermelho"
+        app:layout_constraintBottom_toBottomOf="@+id/menuVermelho"
+        app:layout_constraintEnd_toStartOf="@+id/searchButton"
+        tools:ignore="TouchTargetSize"
+        />
+
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:src="@drawable/lupa_icon"
+        app:layout_constraintTop_toTopOf="@+id/menuVermelho"
+        app:layout_constraintBottom_toBottomOf="@+id/menuVermelho"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintEnd_toEndOf="@+id/addButton"
+        tools:ignore="TouchTargetSize"
+        />
+
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:src="@drawable/add_icon"
+        app:layout_constraintTop_toTopOf="@+id/menuVermelho"
+        app:layout_constraintBottom_toBottomOf="@+id/menuVermelho"
+        app:layout_constraintStart_toEndOf="@+id/searchButton"
+        app:layout_constraintEnd_toStartOf="@+id/groupButton"
+        tools:ignore="TouchTargetSize"
+        />
+
+    <ImageButton
+        android:id="@+id/groupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:src="@drawable/group_button"
+        app:layout_constraintTop_toTopOf="@+id/menuVermelho"
+        app:layout_constraintBottom_toBottomOf="@+id/menuVermelho"
+        app:layout_constraintStart_toEndOf="@+id/addButton"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton"
+        tools:ignore="TouchTargetSize"
+        />
+
+    <ImageButton
+        android:id="@+id/accountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:src="@drawable/account_icon"
+        app:layout_constraintTop_toTopOf="@+id/menuVermelho"
+        app:layout_constraintBottom_toBottomOf="@+id/menuVermelho"
+        app:layout_constraintStart_toEndOf="@+id/groupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

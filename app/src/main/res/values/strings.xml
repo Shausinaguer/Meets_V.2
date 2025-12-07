@@ -1,0 +1,24 @@
+<resources>
+    <string name="ou">ou</string>
+    <string name="app_name">meets</string>
+    <string name="acesse_perfil">Acesse seu Perfil</string>
+    <string name="acesse_perfil_u"><u>Acesse seu Perfil</u></string>
+    <string name="cadastre_se"><u>Cadastre-se</u></string>
+    <string name="faca_cadastro">Faça seu Cadastro</string>
+    <string name="email">E-mail:</string>
+    <string name="senha">Senha:</string>
+    <string name="confirmar_senha">Confirmar Senha:</string>
+    <string name="recuperar_senha"><u>Recuperar Senha</u></string>
+    <string name="txt_recuperar_senha">Recupere o Acesso</string>
+    <string name="txt_receba_senha_email">Receba o link de recuperação \nvia email:</string>
+    <string name="frase_efeito">Sua rede social de evento\nacadêmicos!</string>
+    <string name="entrar">Entrar</string>
+    <string name="exemplo_email_com">exemplo@email.com</string>
+    <string name="descrição">este é um botao</string>
+    <string name="hintsenha">******</string>
+    <string name="nome">Nome:</string>
+    <string name="exemplo_nome">Seu nome</string>
+    <string name="comentario">Digite seu comentario</string>
+    <string name="postar">Postar</string>
+    <string name="cadastrar">Cadastrar</string>
+</resources>
