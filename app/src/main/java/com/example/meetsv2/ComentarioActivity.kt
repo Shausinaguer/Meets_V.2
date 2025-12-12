@@ -1,5 +1,6 @@
 package com.example.meetsv2
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -40,18 +41,27 @@ class ComentarioActivity : AppCompatActivity() {
         btnVoltar.setOnClickListener {
             val intent = Intent(this, FeedActivity::class.java)
             startActivity(intent)
-            finish() // Fechar para não empilhar activities
+            finish()
         }
 
         btnPublicar.setOnClickListener {
             val content = editComentario.text.toString()
 
+            // --- PEGA O ID DO USUÁRIO LOGADO ---
+            val sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+            val userId = sharedPreferences.getInt("userId", -1) // -1 como valor padrão se não encontrar
+
+            if (userId == -1) {
+                Toast.makeText(this, "Erro: Usuário não identificado. Faça login novamente.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            // -------------------------------------
+
             if (content.isNotBlank()) {
                 lifecycleScope.launch {
-                    val newPost = Post(content = content)
+                    val newPost = Post(userId = userId, content = content)
                     postDao.insert(newPost)
-                    
-                    // Voltar para o feed após publicar
+
                     runOnUiThread {
                         Toast.makeText(this@ComentarioActivity, "Publicado!", Toast.LENGTH_SHORT).show()
                         finish()

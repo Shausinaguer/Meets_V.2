@@ -4,8 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [User::class, Post::class], version = 2, exportSchema = false)
+@Database(entities = [User::class, Post::class, ArchivedPost::class], version = 4, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
@@ -21,7 +22,23 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "app_database"
-                ).fallbackToDestructiveMigration() // Adicionado para lidar com a mudança de versão
+                ).fallbackToDestructiveMigration()
+                 .addCallback(object : RoomDatabase.Callback() {
+                     override fun onCreate(db: SupportSQLiteDatabase) {
+                         super.onCreate(db)
+                         db.execSQL(
+                             """
+                             CREATE TRIGGER archive_post_trigger
+                             AFTER DELETE ON posts
+                             FOR EACH ROW
+                             BEGIN
+                                 INSERT INTO archived_posts (id, content, timestamp, userId)
+                                 VALUES (OLD.id, OLD.content, OLD.timestamp, OLD.userId);
+                             END;
+                             """
+                         )
+                     }
+                 })
                  .build()
                 INSTANCE = instance
                 instance

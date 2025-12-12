@@ -62,12 +62,13 @@ class AcessoActivity : AppCompatActivity() {
                     val user = userDao.findByEmailAndSenha(email, senha)
 
                     if (user != null) {
-                        // --- 2. SALVA O ESTADO DE LOGIN ---
+                        // --- SALVA O ESTADO DE LOGIN E O ID ---
                         val sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
                         editor.putBoolean("isLoggedIn", true)
+                        editor.putInt("userId", user.id) // SALVA O ID DO USUÁRIO
                         editor.apply()
-                        // ------------------------------------
+                        // -------------------------------------
 
                         val intent = Intent(this@AcessoActivity, FeedActivity::class.java)
                         startActivity(intent)
